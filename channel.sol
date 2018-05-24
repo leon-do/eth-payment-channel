@@ -25,7 +25,8 @@ contract Channel {
 
 		// signature is invalid, throw
 		if (signer != channelSender && signer != channelRecipient) throw;
-
+		
+		// this === contractAddress
 		proof = sha3(this, value);
 
 		// signature is valid but doesn't match the data provided
